@@ -56,11 +56,11 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">First Author</a><sup>*</sup>,</span>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Bohan Jia</a><sup>*</sup>,</span>
                 <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Second Author</a><sup>*</sup>,</span>
+                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Wenxuan Huang</a><sup>*</sup>,</span>
                   <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Third Author</a>
+                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Yuntian Tang</a><sup>*</sup>
                   </span>
                   </div>
 
@@ -95,7 +95,7 @@
 
                   <!-- Github link -->
                   <span class="link-block">
-                    <a href="https://github.com/YOUR REPO HERE" target="_blank"
+                    <a href="https://github.com/BhJia/ComBench" target="_blank"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fab fa-github"></i>
@@ -122,24 +122,6 @@
   </div>
 </section>
 
-
-<!-- Teaser video-->
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <video poster="" id="tree" autoplay controls muted loop height="100%">
-        <!-- Your video here -->
-        <source src="static/videos/banner_video.mp4"
-        type="video/mp4">
-      </video>
-      <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section>
-<!-- End teaser video -->
-
 <!-- Paper abstract -->
 <section class="section hero is-light">
   <div class="container is-max-desktop">
@@ -148,7 +130,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ullamcorper tellus sed ante aliquam tempus. Etiam porttitor urna feugiat nibh elementum, et tempor dolor mattis. Donec accumsan enim augue, a vulputate nisi sodales sit amet. Proin bibendum ex eget mauris cursus euismod nec et nibh. Maecenas ac gravida ante, nec cursus dui. Vivamus purus nibh, placerat ac purus eget, sagittis vestibulum metus. Sed vestibulum bibendum lectus gravida commodo. Pellentesque auctor leo vitae sagittis suscipit.
+            While real-world applications increasingly demand intricate scene manipulation, existing instruction-guided image editing benchmarks often oversimplify task complexity and instruction comprehensiveness. To address this gap, we introduce Comp-Edit, a large-scale benchmark specifically designed for complex instruction-guided image editing. Our Comp-Edit contains complicated tasks requiring fine-grained instruction-following, spatial-contextual reasoning and precise editing capabilities of image editing model. Meanwhile, To better align instructions with complex editing requirements, we propose an instruction decoupling method that disentangles editing intents into four dimensions: location (spatial constraints), appearance (visual attributes), dynamics (temporal interactions), and objects (entity relationships). Through extensive evaluations, we demonstrate that Comp-Edit exposes fundamental limitations in current methods, which offers a critical tool for advancing next-generation image editing models.
           </p>
         </div>
       </div>
@@ -156,7 +138,6 @@
   </div>
 </section>
 <!-- End paper abstract -->
-
 
 <!-- Image carousel -->
 <section class="hero is-small">
@@ -197,64 +178,154 @@
 </section>
 <!-- End image carousel -->
 
+<section class="hero teaser">
+  <!-- <section class="section"> -->
+    <div class="container is-max-desktop">
+      <!-- <div class="columns is-centered has-text-centered">-->
+      <!-- <div class="column is-four-fifths"> -->
+          <img src="static/images/teaser.png">
+          <h3 class="subtitle has-text-centered">
+            <small>
+            <strong>MLLM-CompBench</strong> offers diverse triplets comprising two images, a question about their relativity, <br> and an answer to cover eight types of relativity.
+            </small>
+          </h3>
+        <!-- </div> -->
+      <!-- </div> -->
+    <!-- </div> -->
+    </div>
+</section>
 
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Dataset Overview. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Overview</h2> <br>
 
+        <div class="content has-text-justified">
+        <p>
+          <strong>MLLM-CompBench</strong> comprises 39.8K triplets, each containing 1) a pair of visually or semantically relevant images, 2) a question about their relativity, and 3) a ground-truth answer.
+          We consider a wide range of questions categorized into eight aspects of relativity. 
+        </p>
 
-<!-- Youtube video -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <!-- Paper video. -->
-      <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video">
-            <!-- Youtube embed code here -->
-            <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        <div class="columns is-centered">
+          <div class="column is-half has-text-centered">
+            <img src="static/images/tasks.pdf" alt="Tasks Image">
+          </div>
+          <div class="column is-half has-text-centered">
+            <img src="static/images/model_ssim_comparison_bubble.png" alt="Another Image">
           </div>
         </div>
+
+        <p>
+          <strong>Attribute Relativity</strong> tests the ability to recognize relative attributes such as size, color, texture, shape, and pattern. 
+          For instance, given two images of birds, we ask MLLMs to compare the length of their beaks (e.g., "Which bird has longer beaks?").
+          <strong>Existential Relativity</strong> assesses the comprehension of existence in comparisons, asking questions like "Which trait is in the left butterfly but not in the right butterfly?".
+          <strong>State/Emotion Relativity</strong> examines if MLLMs can identify state variations, such as different degrees of baking and smiling.
+          <strong>Temporal Relativity</strong> evaluates the understanding of time-related changes between two objects or scenes (e.g., "Which video frame happens earlier during a free kick?"). 
+          <strong>Spatial Relativity</strong> checks the ability to tell spatial differences (e.g., "Which cup looks further?"). 
+          Finally, <strong>Quantitiy/Quality Relativity</strong> investigates whether an MLLM understands the relativity of quantity and quality (e.g., "Which image contains more animal instances?").
+
+        </p>
       </div>
     </div>
+    <!--/ Dataset Overview. -->
   </div>
 </section>
-<!-- End youtube video -->
 
 
-<!-- Video carousel -->
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1">
-          <video poster="" id="video1" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel1.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video2">
-          <video poster="" id="video2" autoplay controls muted loop height="100%">
-            <!-- Your video file here -->
-            <source src="static/videos/carousel2.mp4"
-            type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-          <video poster="" id="video3" autoplay controls muted loop height="100%">\
-            <!-- Your video file here -->
-            <source src="static/videos/carousel3.mp4"
-            type="video/mp4">
-          </video>
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Curation Pipeline. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Data Curation</h2> <br>
+  
+          <div class="content has-text-justified">
+            <p>
+              The data curation pipeline for MLLM-CompBench includes data selection, question generation, answer annotation, and verification. 
+              We rely on combinations of humans, computer programs, MLLMs (specifically GPT-4V), and CLIP similarity to select images and generate questions, based on relativity types and available metadata.
+            </p>
+  
+          </div>
+          <img src="static/images/Overall.pdf">
+          <!--
+          <h3 class="subtitle has-text-centered">
+            <br>
+            <small>CompBench Curation Pipeline.</small>
+          </h3>-->
+          
+  
+          
         </div>
       </div>
+      <!--/ Curation Pipeline. -->
     </div>
-  </div>
 </section>
-<!-- End video carousel -->
 
 
+<section class="section">
+    <div class="container is-max-desktop">
+      <!-- Results. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Experimental Results</h2> <br>
+  
+
+          <div class="content has-text-justified">
+            <p>
+              We evaluate four leading MLLMs (i.e., GPT-4V(ision),  Gemini1.0-Pro, LLaVA-1.6,  VILA-1.5) across <strong>eight</strong> relative comparisons spanning <strong>sixteen</strong> tasks.
+              The top-performing model in each task is indicated <strong>in bold</strong>. 
+              ST: MIT-States,
+              FA: Fashionpedia,
+              VA: VAW,
+              CU: CUB-200-2011,
+              WF: Wildfish++,
+              MB: MagicBrush,
+              SD: Spot-the-diff,
+              CE: CelebA,
+              FE: FER-2013,
+              SN: SoccerNet,
+              CC: CompCars,
+              ND: NYU-Depth V2,
+              VQ: VQAv2,
+              QB: Q-Bench2.
+            </p>
+          </div>
+            
+          <img src="static/images/results.jpg">
+          
+
+          <div class="content has-text-justified">
+            <p>
+              We observe that current MLLMs face challenges in answering relative questions in MLLM-CompBench. 
+              All MLLMs achieve averaged accuracies over the sixteen tasks (columns) below 80%, with GPT-4V reaching the highest accuracy at 74.7%.
+              In particular, the existing MLLMs struggle with answering relative questions regarding Existence, Spatiality, and Quantity.
+            </p>
+          </div>
+  
+          <div class="content has-text-justified">
+            <p>
+              <strong>Error Analysis on MLLM-CompBench</strong>. We observe four types of errors where GPT4-V falls short: 
+              (i) differentiating colors between objects and backgrounds, 
+              (ii) counting small or distant objects, 
+              (iii) identifying objects within crowded scenes, and 
+              (iv) recognizing out-of-focus details.
+            </p>
+          </div>
+          
+          <img src="static/images/error_analysis.jpg">
+          
+
+          
+          
+        </div>
+      </div>
+      
+      <!--/ Results. -->
+    </div>
+
+</section>
 
 
 
