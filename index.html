@@ -24,7 +24,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>Academic Project Page</title>
+  <title>CompBench: Benchmarking Complex Instruction-guided Image Editing</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -52,7 +52,7 @@
       <div class="container is-max-desktop">
         <div class="columns is-centered">
           <div class="column has-text-centered">
-            <h1 class="title is-1 publication-title">Academic Project Page</h1>
+            <h1 class="title is-1 publication-title">CompBench: Benchmarking Complex Instruction-guided Image Editing</h1>
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
@@ -65,7 +65,7 @@
                   </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">Institution Name<br>Conferance name and year</span>
+                    <span class="author-block">East China Normal University<br>Conferance name and year</span>
                     <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
                   </div>
 
@@ -147,7 +147,7 @@
           <img src="static/images/teaser.png">
           <h3 class="subtitle has-text-centered">
             <small>
-            <strong>MLLM-CompBench</strong> offers diverse triplets comprising two images, a question about their relativity, <br> and an answer to cover eight types of relativity.
+            <strong>CompBench</strong> offers diverse instruction-guided image editing tasks across nine categories: object addition, object removal, object replacement, multi-object editing, multi-turn editing, implicit reasoning, action editing, location editing and viewpoint editing
             </small>
           </h3>
         <!-- </div> -->
@@ -165,10 +165,7 @@
 
         <div class="content has-text-justified">
         <p>
-          <strong>MLLM-CompBench</strong> comprises 39.8K triplets, each containing 1) a pair of visually or semantically relevant images, 2) a question about their relativity, and 3) a ground-truth answer.
-          We consider a wide range of questions categorized into eight aspects of relativity. 
-        </p>
-
+          Our complex instruction-guided image editing benchmark, <strong>CompBench</strong>, contains 3k+ image-instruction pairs. To enhance the comprehensiveness of evaluation, we categorize editing tasks into <strong>five major classes</strong> with <strong>specific tasks</strong> based on their characteristics:(1) Local Editing: focuses on manipulating local objects, including object removal, object addition and object replacement. (2) Multi-editing: addresses interactions among multiple objects or editing steps, including multi-turn editing and multi-object editing. (3) Action Editing: modifies the dynamic states or interactions of objects. (4) Scene Spatial Editing: alters scene spatial properties, consisting of location editing and viewpoint editing. (5) Complex Reasoning: requires implicit logical reasoning, including implicit reasoning.        </p>
         <div class="columns is-centered">
           <div class="column is-half has-text-centered">
             <img src="static/images/tasks/tasks-1.png" alt="Tasks Image">
@@ -177,16 +174,8 @@
             <img src="static/images/model_ssim_comparison_bubble.png" alt="Another Image">
           </div>
         </div>
-
         <p>
-          <strong>Attribute Relativity</strong> tests the ability to recognize relative attributes such as size, color, texture, shape, and pattern. 
-          For instance, given two images of birds, we ask MLLMs to compare the length of their beaks (e.g., "Which bird has longer beaks?").
-          <strong>Existential Relativity</strong> assesses the comprehension of existence in comparisons, asking questions like "Which trait is in the left butterfly but not in the right butterfly?".
-          <strong>State/Emotion Relativity</strong> examines if MLLMs can identify state variations, such as different degrees of baking and smiling.
-          <strong>Temporal Relativity</strong> evaluates the understanding of time-related changes between two objects or scenes (e.g., "Which video frame happens earlier during a free kick?"). 
-          <strong>Spatial Relativity</strong> checks the ability to tell spatial differences (e.g., "Which cup looks further?"). 
-          Finally, <strong>Quantitiy/Quality Relativity</strong> investigates whether an MLLM understands the relativity of quantity and quality (e.g., "Which image contains more animal instances?").
-
+          Every sample in CompBench is meticulously constructed through multiple rounds of expert review, ensuring the highest quality of edits. Unlike other benchmarks where editing failures are common, all data in CompBench represent successfully executed editing results, with SSIM (Structural Similarity Index Measure) scores significantly outperforming those of other datasets. This rigorous quality control ensures that CompBench provides a reliable assessment of model performance in realistically complex editing scenarios.
         </p>
       </div>
     </div>
@@ -204,8 +193,7 @@
   
           <div class="content has-text-justified">
             <p>
-              The data curation pipeline for MLLM-CompBench includes data selection, question generation, answer annotation, and verification. 
-              We rely on combinations of humans, computer programs, MLLMs (specifically GPT-4V), and CLIP similarity to select images and generate questions, based on relativity types and available metadata.
+              The pipeline consists of two main stages: (a) Source data collection and preprocessing, wherein high-quality data are identified through image quality filtering, mask decomposition, occlusion and continuity evaluation, followed by thorough human verification. (b) Task-specific data generation using four specialized pipelines within our MLLM-Human Collaborative Framework, where multimodal large language models generate initial editing instructions that are subsequently validated by humans to ensure high-fidelity, semantically aligned instruction-image pairs for complex editing tasks.
             </p>
   
           </div>
@@ -235,50 +223,22 @@
 
           <div class="content has-text-justified">
             <p>
-              We evaluate four leading MLLMs (i.e., GPT-4V(ision),  Gemini1.0-Pro, LLaVA-1.6,  VILA-1.5) across <strong>eight</strong> relative comparisons spanning <strong>sixteen</strong> tasks.
-              The top-performing model in each task is indicated <strong>in bold</strong>. 
-              ST: MIT-States,
-              FA: Fashionpedia,
-              VA: VAW,
-              CU: CUB-200-2011,
-              WF: Wildfish++,
-              MB: MagicBrush,
-              SD: Spot-the-diff,
-              CE: CelebA,
-              FE: FER-2013,
-              SN: SoccerNet,
-              CC: CompCars,
-              ND: NYU-Depth V2,
-              VQ: VQAv2,
-              QB: Q-Bench2.
+              We evaluate instruction-guided image editing models only, including InstructPix2pix, MagicBrush, HIVE, MGIE, and others. Evaluation covers foreground accuracy and background consistency, using PSNR, SSIM, LPIPS, and CLIP-based metrics. For tasks with major object changes (e.g., action or viewpoint), we use GPT-4o with tailored prompts to score edits from 0 to 10.
             </p>
+
           </div>
             
-          <img src="static/images/results.jpg">
+          <img src="static/images/Comparison.jpg">
           
 
           <div class="content has-text-justified">
             <p>
-              We observe that current MLLMs face challenges in answering relative questions in MLLM-CompBench. 
-              All MLLMs achieve averaged accuracies over the sixteen tasks (columns) below 80%, with GPT-4V reaching the highest accuracy at 74.7%.
-              In particular, the existing MLLMs struggle with answering relative questions regarding Existence, Spatiality, and Quantity.
-            </p>
+              LC-T denotes local CLIP scores between the edited foreground and the local description. LC-I refers to the CLIP image similarity between the foreground edited result and ground truth (GT) image. Top-three evaluation results are highlighted in  (1st), blue(2nd), and green (3rd).            </p>
           </div>
   
           <div class="content has-text-justified">
-            <p>
-              <strong>Error Analysis on MLLM-CompBench</strong>. We observe four types of errors where GPT4-V falls short: 
-              (i) differentiating colors between objects and backgrounds, 
-              (ii) counting small or distant objects, 
-              (iii) identifying objects within crowded scenes, and 
-              (iv) recognizing out-of-focus details.
-            </p>
+            
           </div>
-          
-          <img src="static/images/error_analysis.jpg">
-          
-
-          
           
         </div>
       </div>
@@ -286,9 +246,81 @@
       <!--/ Results. -->
     </div>
 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+       <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/local_editing.jpg" alt="MY ALT TEXT" />
+        <h2 class="subtitle has-text-centered">
+          Evaluation results on local editing, multi-object editing and implicit reasoning
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/multi-turn.jpg" alt="MY ALT TEXT" style="width: 800px; height: auto; display: block; margin: 0 auto;"/>
+        <h2 class="subtitle has-text-centered">
+          Evaluation results on multi-turn editing.
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/act_loc_view.jpg" alt="MY ALT TEXT" style="width: 600px; height: auto; display: block; margin: 0 auto;"/>
+        <h2 class="subtitle has-text-centered">
+         Evaluation results on action editing, location editing and viewpoint editing tasks
+       </h2>
+     </div>
+  </div>
+</div>
+</div>
 </section>
 
+</section>
 
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container">
+      <div id="results-carousel" class="carousel results-carousel">
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/case1/case1-1.png" alt="MY ALT TEXT" style="width: 800px; height: auto; display: block; margin: 0 auto;"/>
+        <h2 class="subtitle has-text-centered">
+          Cases of Local Editing Results
+        </h2>
+      </div>
+      <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/case2/case2-1.png" alt="MY ALT TEXT" style="width: 800px; height: auto; display: block; margin: 0 auto;"/>
+        <h2 class="subtitle has-text-centered">
+         More Cases of Local Editing Results
+       </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/model_act_loc_view_1/model_act_loc_view_1-1.png" style="width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <h2 class="subtitle has-text-centered">
+        Action, Location and Viewpoint Editing Examples
+      </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/model_act_loc_view_2/model_act_loc_view_2-1.png" style="width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <h2 class="subtitle has-text-centered">
+        Action, Location and Viewpoint Editing Examples
+      </h2>
+     </div>
+     <div class="item">
+      <!-- Your image here -->
+      <img src="static/images/model_act_loc_view_3/model_act_loc_view_3-1.png" style="width: 800px; height: auto; display: block; margin: 0 auto;"/>
+      <h2 class="subtitle has-text-centered">
+        Action, Location and Viewpoint Editing Examples
+      </h2>
+     </div>
+  </div>
+</div>
+</div>
+</section>
 
 
 <!-- Paper poster -->
