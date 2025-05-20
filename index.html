@@ -56,24 +56,74 @@
             <div class="is-size-5 publication-authors">
               <!-- Paper authors -->
               <span class="author-block">
-                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Bohan Jia</a><sup>*</sup>,</span>
-                <span class="author-block">
-                  <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Wenxuan Huang</a><sup>*</sup>,</span>
-                  <span class="author-block">
-                    <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Yuntian Tang</a><sup>*</sup>
-                  </span>
-                  </div>
+                <a href="FIRST AUTHOR PERSONAL LINK" target="_blank">Bohan Jia</a><sup>1*</sup>,</span>
+              <span class="author-block">
+                <a href="SECOND AUTHOR PERSONAL LINK" target="_blank">Wenxuan Huang</a><sup>1,2*</sup>,</span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Yuntian Tang</a><sup>1*</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Junbo Qiao</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Jiacheng Liao</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Shaosheng Cao</a><sup>3&#9993;</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Fei Zhao</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhaopeng Feng</a><sup>4</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhouhong Gu</a><sup>5</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zhenfei Yin</a><sup>6</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Lei Bai</a><sup>7</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Wanli Ouyang</a><sup>2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Lin Chen</a><sup>8</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Fei Zhao</a><sup>9</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Zihan Wang</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Yuan Xie</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="THIRD AUTHOR PERSONAL LINK" target="_blank">Shaohui Lin</a><sup>1&#9993;</sup>
+              </span>
+            </div>
 
                   <div class="is-size-5 publication-authors">
-                    <span class="author-block">East China Normal University<br>Conferance name and year</span>
-                    <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution</small></span>
+                    <sup>1</sup>East China Normal University&nbsp;&nbsp;
+                    <sup>2</sup>The Chinese University of Hong Kong<br>
+                    <sup>3</sup>Xiaohongshu Inc.&nbsp;&nbsp;
+                    <sup>4</sup>Zhejiang University&nbsp;&nbsp;
+                    <sup>5</sup>Fudan University&nbsp;&nbsp;
+                    <sup>6</sup>University of Oxford<br>
+                    <sup>7</sup>Shanghai Jiao Tong University&nbsp;&nbsp;
+                    <sup>8</sup>University of Science and Technology of China&nbsp;&nbsp;
+                    <sup>9</sup>Nanjing University
+                    <div class="eql-cntrb"><sup>*</sup>Indicates Equal Contribution</div>
                   </div>
 
                   <div class="column has-text-centered">
                     <div class="publication-links">
                          <!-- Arxiv PDF link -->
                       <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
+                        <a href="https://arxiv.org/abs/2505.12200" target="_blank"
                         class="external-link button is-normal is-rounded is-dark">
                         <span class="icon">
                           <i class="fas fa-file-pdf"></i>
@@ -82,14 +132,14 @@
                       </a>
                     </span>
 
-                    <!-- Supplementary PDF link -->
+                    <!-- Hugginface link -->
                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
+                      <a href="https://huggingface.co/datasets/BohanJia/CompBench" target="_blank"
                       class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
+                        <img src="https://huggingface.co/front/assets/huggingface_logo-noborder.svg" alt="Hugging Face" style="height: 1.2em;">
                       </span>
-                      <span>Supplementary</span>
+                      <span>Datasets</span>
                     </a>
                   </span>
 
@@ -104,16 +154,7 @@
                   </a>
                 </span>
 
-                <!-- ArXiv abstract Link -->
-                <span class="link-block">
-                  <a href="https://arxiv.org/abs/<ARXIV PAPER ID>" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+               
             </div>
           </div>
         </div>
@@ -177,6 +218,7 @@
         <p>
           Every sample in CompBench is meticulously constructed through multiple rounds of expert review, ensuring the highest quality of edits. Unlike other benchmarks where editing failures are common, all data in CompBench represent successfully executed editing results, with SSIM (Structural Similarity Index Measure) scores significantly outperforming those of other datasets. This rigorous quality control ensures that CompBench provides a reliable assessment of model performance in realistically complex editing scenarios.
         </p>
+        <img src="static/images/Comparison.jpg">
       </div>
     </div>
     <!--/ Dataset Overview. -->
@@ -227,10 +269,7 @@
             </p>
 
           </div>
-            
-          <img src="static/images/Comparison.jpg">
           
-
           <div class="content has-text-justified">
             <p>
               LC-T denotes local CLIP scores between the edited foreground and the local description. LC-I refers to the CLIP image similarity between the foreground edited result and ground truth (GT) image. Top-three evaluation results are highlighted in  (1st), blue(2nd), and green (3rd).            </p>
@@ -250,13 +289,6 @@
   <div class="hero-body">
     <div class="container">
       <div id="results-carousel" class="carousel results-carousel">
-       <div class="item">
-        <!-- Your image here -->
-        <img src="static/images/local_editing.jpg" alt="MY ALT TEXT" />
-        <h2 class="subtitle has-text-centered">
-          Evaluation results on local editing, multi-object editing and implicit reasoning
-        </h2>
-      </div>
       <div class="item">
         <!-- Your image here -->
         <img src="static/images/multi-turn.jpg" alt="MY ALT TEXT" style="width: 800px; height: auto; display: block; margin: 0 auto;"/>
@@ -271,6 +303,13 @@
          Evaluation results on action editing, location editing and viewpoint editing tasks
        </h2>
      </div>
+     <div class="item">
+        <!-- Your image here -->
+        <img src="static/images/local_editing.jpg" alt="MY ALT TEXT" />
+        <h2 class="subtitle has-text-centered">
+          Evaluation results on local editing, multi-object editing and implicit reasoning
+        </h2>
+      </div>
   </div>
 </div>
 </div>
@@ -323,28 +362,14 @@
 </section>
 
 
-<!-- Paper poster -->
-<section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
-      <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
-<!--End paper poster -->
-
 
 <!--BibTex citation -->
-  <section class="section" id="BibTeX">
+  <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
       <pre><code>BibTex Code Here</code></pre>
     </div>
-</section>
+</section> -->
 <!--End BibTex citation -->
 
 
