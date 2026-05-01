@@ -117,6 +117,7 @@
                     <sup>8</sup>University of Science and Technology of China&nbsp;&nbsp;
                     <sup>9</sup>Nanjing University
                     <div class="eql-cntrb"><sup>*</sup>Indicates Equal Contribution</div>
+                    <div class="eql-cntrb" style="margin-top:0.5em; font-weight:600;">CVPR 2026</div>
                   </div>
 
                   <div class="column has-text-centered">
@@ -154,12 +155,6 @@
                   </a>
                 </span>
 
-                <span class="link-block">
-                  <a class="external-link button is-normal is-rounded is-dark" style="background-color:#1772d0;">
-                    <span class="icon"><i class="fas fa-award"></i></span>
-                    <span>CVPR 2026</span>
-                  </a>
-                </span>
 
 
             </div>
@@ -246,7 +241,7 @@
             </p>
   
           </div>
-          <img src="static/images/Overall/Overall-1.png">
+          <img src="static/images/Overall/Overall.jpg">
           <!--
           <h3 class="subtitle has-text-centered">
             <br>
@@ -289,14 +284,14 @@
 
           <div class="content has-text-justified">
             <p>
-              We evaluate 15 instruction-guided image editing models: InstructPix2pix, MagicBrush, HIVE, SmartEdit, MGIE, CosXL-Edit, HQ-Edit, UltraEdit, AnyEdit, SEED-X, GoT, Step1X-Edit, Bagel, FLUX.1 Kontext, and Qwen-Image-Edit. Evaluation covers foreground accuracy and background consistency, using PSNR, SSIM, LPIPS, and CLIP-based metrics. For tasks with major object changes (e.g., action or viewpoint), we use GPT-4o with tailored prompts to score edits from 0 to 10.
+              We evaluate 15 instruction-guided image editing models (16 configurations, as HIVE is evaluated in two settings: HIVE-w and HIVE-c): InstructPix2pix, MagicBrush, HIVE, SmartEdit, MGIE, CosXL-Edit, HQ-Edit, UltraEdit, AnyEdit, SEED-X, GoT, Step1X-Edit, Bagel, FLUX.1 Kontext, and Qwen-Image-Edit. Evaluation covers foreground accuracy and background consistency using PSNR, SSIM, LPIPS, and CLIP-based metrics. For action, location, and viewpoint editing tasks—where object morphology or position may change significantly—we introduce multi-perspective scoring via GPT-4o, Qwen2.5-VL-72B, and human annotators, all rating editing performance on a 0–10 scale.
             </p>
 
           </div>
           
           <div class="content has-text-justified">
             <p>
-              LC-T denotes local CLIP scores between the edited foreground and the local description. LC-I refers to the CLIP image similarity between the foreground edited result and ground truth (GT) image. Top-three evaluation results are highlighted in  (1st), blue(2nd), and green (3rd).            </p>
+              LC-T denotes local CLIP scores between the edited foreground and the local description. LC-I refers to the CLIP image similarity between the foreground edited result and ground truth (GT) image. Top-three evaluation results are highlighted in red (1st), blue (2nd), and green (3rd).            </p>
           </div>
   
           <div class="content has-text-justified">
@@ -404,11 +399,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@inproceedings{jia2026compbench,
-  title     = {CompBench: Benchmarking Complex Instruction-guided Image Editing},
-  author    = {Jia, Bohan and Huang, Wenxuan and Tang, Yuntian and Qiao, Junbo and Liao, Jincheng and Cao, Shaosheng and Zhao, Fei and Feng, Zhaopeng and Gu, Zhouhong and Yin, Zhenfei and Bai, Lei and Ouyang, Wanli and Chen, Lin and Hu, Yao and Wang, Zihan and Xie, Yuan and Lin, Shaohui},
-  booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
-  year      = {2026}
+    <pre><code>@article{jia2025compbench,
+  title={Compbench: Benchmarking complex instruction-guided image editing},
+  author={Jia, Bohan and Huang, Wenxuan and Tang, Yuntian and Qiao, Junbo and Liao, Jincheng and Cao, Shaosheng and Zhao, Fei and Feng, Zhaopeng and Gu, Zhouhong and Yin, Zhenfei and others},
+  journal={arXiv preprint arXiv:2505.12200},
+  year={2025}
 }</code></pre>
   </div>
 </section>
